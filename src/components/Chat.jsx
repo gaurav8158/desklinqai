@@ -1,4 +1,5 @@
 import logo from "../assets/desklinqimg.png";
+import avtaruser from "../assets/avtaruser.png";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React, { useEffect, useRef, useState } from "react";
 import StayCard from "./StayCard";
@@ -99,7 +100,7 @@ const Chat = ({ input, setInput, messages, setMessages }) => {
             <div className="w-10 h-10 bg-gray-300 rounded-full">
               {message.sender === "user" ? (
                 <img
-                  src="/path-to-user-avatar.jpg"
+                  src={avtaruser}
                   alt="User Avatar"
                   className="object-cover w-full h-full rounded-full"
                 />
