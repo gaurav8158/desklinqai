@@ -55,7 +55,7 @@ const StayCard = ({ space = {} }) => {
     }).format(price);
 
   return (
-    <div className="relative bg-white rounded-lg shadow-sm group max-w-[280px] overflow-hidden">
+    <div className="relative bg-white rounded-lg shadow-sm group w-[220px] hover:shadow-md cursor-pointer ">
       {/* Image Section */}
       <div className="relative">
         <img
