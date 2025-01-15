@@ -15,7 +15,7 @@ function Homepage() {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex flex-col justify-between flex-1 p-2 lg:p-10 lg:px-24 max-w-full lg:max-w-[916px] mx-auto">
+      <div className="flex flex-col justify-between flex-1 p-2 lg:p-10 lg:px-24 w-full lg:max-w-[1080px] mx-auto">
         {/* Header */}
         <Header />
         {/* Cards */}
