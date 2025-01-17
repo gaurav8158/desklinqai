@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import ImageSlider from "./ImageSlider";
 
 const StayCard = ({ space = {} }) => {
   console.log(space);
@@ -55,14 +56,10 @@ const StayCard = ({ space = {} }) => {
     }).format(price);
 
   return (
-    <div className="relative bg-white rounded-lg shadow-sm group w-[220px] hover:shadow-md cursor-pointer ">
+    <div className="relative  shrink-0 bg-white rounded-lg shadow-lg group w-[260px] p-3 hover:shadow-md cursor-pointer ">
       {/* Image Section */}
-      <div className="relative">
-        <img
-          src={currentImage}
-          alt={name}
-          className="object-cover w-full h-[180px]"
-        />
+      <div className="relative ">
+        <ImageSlider images={images} />
         <span className="absolute px-2 py-1 text-xs bg-white rounded shadow top-2 right-2">
           {distance.toFixed(2)} m away
         </span>
@@ -99,18 +96,21 @@ const StayCard = ({ space = {} }) => {
 
         {/* Pricing and Action */}
         <div className="flex items-center justify-between">
-          <div className="text-sm font-bold text-neutral-900">
+          <div className="text-sm font-bold text-[#4A25E1]">
             {formatCurrency(priceInfo.price, priceInfo.currency)}
-            <span className="text-xs font-normal text-neutral-500">
+            <span className="text-xs font-normal ">
               / {priceInfo.duration.toLowerCase()}
             </span>
           </div>
           <a
             href={href(type, slug)} // Call href function with `type` and `slug`
-            className="text-[#6115E7] text-sm font-bold underline flex items-center gap-1"
+            target="_blank" // Opens in a new tab
+            rel="noopener noreferrer" // Security best practice
+            className="text-white py-2 px-2 shadow-xl rounded-2xl bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF]
+  text-sm font-bold flex items-center gap-1"
           >
             Book Now
-            <Icon icon="bi:arrow-right" width="16" />
+            {/* <Icon icon="bi:arrow-right" width="16" /> */}
           </a>
         </div>
       </div>

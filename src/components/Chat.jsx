@@ -78,7 +78,7 @@ const Chat = ({ input, setInput, messages, setMessages }) => {
   };
 
   return (
-    <div className="flex flex-col max-h-[500px] p-4">
+    <div className="flex flex-col max-h-[500px] p-2 sm:p-4">
       <div className="flex-1 p-4 space-y-6 overflow-y-auto bg-white rounded-lg shadow-sm">
         {messages.map((message, index) => (
           <div key={index}>
@@ -124,25 +124,24 @@ const Chat = ({ input, setInput, messages, setMessages }) => {
                 {message.suggestedSpaces.map((space) => (
                   <StayCard key={space._id} space={space} />
                 ))}
+              
               </div>
             )}
           </div>
         ))}
         <div ref={chatEndRef} />
       </div>
-
       <div className="relative flex items-center gap-4 mt-4">
-        <input
-          type="text"
+        <textarea
           placeholder="What kind of workspace are you looking for?"
-          className="flex-1 h-16 p-4 border border-gray-300 shadow-sm rounded-3xl focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="flex-1 h-24 p-4 border border-gray-300 shadow-sm resize-none rounded-3xl focus:ring-2 focus:ring-purple-500 focus:outline-none"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && handleSend()}
+          onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}
         />
         <button
           onClick={handleSend}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 px-4 py-3 text-white bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] rounded-2xl shadow-lg hover:bg-purple-700"
+          className="absolute right-4 top-4 px-4 py-3 text-white bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF] rounded-2xl shadow-lg hover:bg-purple-700"
         >
           <Icon icon="lsicon:send-filled" width="24" height="24" />
         </button>
