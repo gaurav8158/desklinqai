@@ -10,7 +10,7 @@ function Homepage() {
   const [messages, setMessages] = useState([]); // State for the chat messages
 
   return (
-    <div className="flex flex-col h-screen overflow-y-scroll lg:flex-row">
+    <div className="flex flex-col lg:overflow-y-scroll lg:h-screen lg:flex-row">
       {/* Sidebar */}
       <Sidebar />
 
