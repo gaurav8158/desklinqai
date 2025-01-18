@@ -78,63 +78,65 @@ const Chat = ({ input, setInput, messages, setMessages }) => {
   };
 
   return (
-    <div className="flex flex-col max-h-[500px] p-2 sm:p-4">
-      <div className="flex-1 p-4 space-y-6 overflow-y-auto bg-white rounded-lg shadow-sm">
-        {messages.map((message, index) => (
-          <div key={index}>
-            <div
-              className={`flex items-center space-x-4 ${
-                message.sender === "user"
-                  ? "flex-row-reverse space-x-reverse"
-                  : ""
-              }`}
-            >
-              <div className="w-10 h-10 bg-gray-300 rounded-full shrink-0">
-                {message.sender === "user" ? (
-                  <img
-                    src={avtaruser}
-                    alt="User Avatar"
-                    className="object-cover w-full h-full rounded-full"
-                  />
-                ) : (
-                  <img
-                    src={logo}
-                    alt="AI Avatar"
-                    className="object-cover w-full h-full rounded-full"
-                  />
-                )}
-              </div>
-              <div className="flex flex-col space-y-1">
-                <span className="text-xs text-gray-500">
-                  {message.timestamp}
-                </span>
-                <div
-                  className={`max-w-sm text-sm font-medium ${
-                    message.sender === "user"
-                      ? "text-gray-600"
-                      : "text-gray-800"
-                  }`}
-                >
-                  {message.text}
+    <div className="flex flex-col h-full max-h-screen p-2 hide-scrollbar sm:p-4">
+      {messages.length !== 0 && (
+        <div className="flex-1 p-4 space-y-6 overflow-y-auto bg-white rounded-lg shadow-sm hide-scrollbar">
+          {messages.map((message, index) => (
+            <div key={index}>
+              <div
+                className={`flex items-center space-x-4 ${
+                  message.sender === "user"
+                    ? "flex-row-reverse space-x-reverse"
+                    : ""
+                }`}
+              >
+                <div className="w-10 h-10 bg-gray-300 rounded-full shrink-0">
+                  {message.sender === "user" ? (
+                    <img
+                      src={avtaruser}
+                      alt="User Avatar"
+                      className="object-cover w-full h-full rounded-full"
+                    />
+                  ) : (
+                    <img
+                      src={logo}
+                      alt="AI Avatar"
+                      className="object-cover w-full h-full rounded-full"
+                    />
+                  )}
+                </div>
+                <div className="flex flex-col space-y-1">
+                  <span className="text-xs text-gray-500">
+                    {message.timestamp}
+                  </span>
+                  <div
+                    className={`max-w-sm text-sm font-medium ${
+                      message.sender === "user"
+                        ? "text-gray-600"
+                        : "text-gray-800"
+                    }`}
+                  >
+                    {message.text}
+                  </div>
                 </div>
               </div>
+              {message.suggestedSpaces &&
+                message.suggestedSpaces.length > 0 && (
+                  <div className="flex gap-3 p-4 overflow-x-auto scrollbar-hide">
+                    {message.suggestedSpaces.map((space) => (
+                      <StayCard key={space._id} space={space} />
+                    ))}
+                  </div>
+                )}
             </div>
-            {message.suggestedSpaces && message.suggestedSpaces.length > 0 && (
-              <div className="flex gap-3 p-4 overflow-x-auto scrollbar-hide">
-                {message.suggestedSpaces.map((space) => (
-                  <StayCard key={space._id} space={space} />
-                ))}
-              
-              </div>
-            )}
-          </div>
-        ))}
-        <div ref={chatEndRef} />
-      </div>
-      <div className="relative flex items-center gap-4 mt-4">
+          ))}
+          <div ref={chatEndRef} />
+        </div>
+      )}
+      <div className="sticky flex items-center gap-4 mt-4 bottom-3 right-2 left-2 sm:relative">
         <textarea
           placeholder="What kind of workspace are you looking for?"
-          className="flex-1 h-24 p-4 border border-gray-300 shadow-sm resize-none rounded-3xl focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="flex-1 h-24 p-4 border border-gray-300 shadow-sm resize-none pr-14 rounded-3xl focus:ring-2 focus:ring-purple-500 focus:outline-none"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}

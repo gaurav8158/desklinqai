@@ -10,17 +10,17 @@ function Homepage() {
   const [messages, setMessages] = useState([]); // State for the chat messages
 
   return (
-    <div className="flex flex-col min-h-screen lg:flex-row">
+    <div className="flex flex-col h-screen overflow-y-scroll lg:flex-row">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex flex-col justify-between flex-1 p-2 lg:p-10 lg:px-24 w-full lg:max-w-[1080px] mx-auto">
+      <div className="flex flex-col h-screen overflow-y-scroll justify-between flex-1 p-2 lg:p-10 lg:px-24 w-full hide-scrollbar lg:max-w-[1080px] mx-auto">
         {/* Header */}
-        <Header />
+        {( messages.length===0) && (  <Header />)}
         {/* Cards */}
 
-        {(!input || !messages) && (
+        {( messages.length===0) && (
           <CardGrid
             messages={messages}
             setMessages={setMessages}

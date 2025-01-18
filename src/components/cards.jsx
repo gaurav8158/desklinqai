@@ -96,7 +96,7 @@ import icon3 from "../assets/exploreicon/PrivateOffice.png";
 import icon4 from "../assets/icon4.png";
 
 const initialCards = [
-  { id: 1, title: "I am looking for a Host Desk", icon: icon1, active: true },
+  { id: 1, title: "I am looking for a Hot Desk", icon: icon1, active: true },
   { id: 2, title: "I need a meeting room", icon: icon2, active: false },
   { id: 3, title: "Private Office", icon: icon3, active: false },
   { id: 4, title: "How can I search?", icon: icon4, active: false },
@@ -125,9 +125,9 @@ const CardGrid = ({ input, setInput }) => {
           <div
             key={card.id}
             onClick={() => handleCardClick(card.id, card.title)}
-            className={`flex-shrink-0 p-4 rounded-3xl shadow-md cursor-pointer transition-transform h-[140px] flex flex-col justify-between ${
+            className={`flex-shrink-0 text-black p-4 rounded-3xl shadow-md cursor-pointer transition-transform h-[140px] flex flex-col justify-between ${
               card.active
-                ? "bg-[#6C4AF6] border-2 border-[#6C4AF6] scale-105"
+                ? " border-2 border-[#6C4AF6] scale-105"
                 : "bg-[#F9F9FA]"
             }`}
           >
@@ -140,7 +140,7 @@ const CardGrid = ({ input, setInput }) => {
             </div>
             <p
               className={`text-sm font-medium text-center ${
-                card.active ? "text-white" : "text-gray-800"
+                card.active ? "text-gray-800" : "text-gray-800"
               }`}
             >
               {card.title}
