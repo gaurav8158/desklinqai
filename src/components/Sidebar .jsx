@@ -4,7 +4,7 @@ import logo from "../assets/desklinqimg.png";
 import DropdownMenu from "./DropdownMenu";
 const Sidebar = () => {
   return (
-    <aside className="bg-[#F3F4F6] w-full lg:w-20 flex justify-between lg:flex-col lg:h-full lg:min-h-screen lg:items-center p-4 lg:p-6 lg:rounded-r-lg">
+    <aside className="sticky top-0 lg:relative bg-[#F3F4F6] w-full lg:w-20 flex justify-between lg:flex-col lg:h-full lg:min-h-screen lg:items-center p-4 lg:p-6 lg:rounded-r-lg">
       {/* Logo */}
       <div className="lg:mb-6 ">
         <img src={logo} alt="Logo" className="w-8 h-8" />

@@ -136,7 +136,7 @@ const Chat = ({ input, setInput, messages, setMessages }) => {
       <div className="sticky flex items-center gap-4 mt-4 bottom-3 right-2 left-2 sm:relative">
         <textarea
           placeholder="What kind of workspace are you looking for?"
-          className="flex-1 h-24 p-4 border border-gray-300 shadow-sm resize-none pr-14 rounded-3xl focus:ring-2 focus:ring-purple-500 focus:outline-none"
+          className="flex-1 h-24 p-4 pr-16 border border-gray-300 shadow-sm resize-none rounded-3xl focus:ring-2 focus:ring-purple-500 focus:outline-none"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && handleSend()}

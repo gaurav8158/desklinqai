@@ -115,7 +115,7 @@ const CardGrid = ({ input, setInput }) => {
   };
 
   return (
-    <div>
+    <div >
       <p className="pl-2 mb-4">
         Choose from one of the most popular space types, or begin your search
         now
