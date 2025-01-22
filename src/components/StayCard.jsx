@@ -56,11 +56,11 @@ const StayCard = ({ space = {} }) => {
     }).format(price);
 
   return (
-    <div className="relative  shrink-0 bg-white rounded-lg shadow-lg group w-[260px] p-3 hover:shadow-md cursor-pointer ">
+    <div className="relative  shrink-0 bg-white rounded-lg shadow-sm group w-[240px]  hover:shadow-md cursor-pointer ">
       {/* Image Section */}
       <div className="relative ">
         <ImageSlider images={images} />
-        <span className="absolute px-2 py-1 text-xs bg-white rounded shadow top-2 right-2">
+        <span className="absolute px-2 py-1 text-xs font-bold text-white bg-white bg-opacity-50 shadow bottom-6 right-2">
           {distance.toFixed(2)} m away
         </span>
       </div>
@@ -68,7 +68,7 @@ const StayCard = ({ space = {} }) => {
       {/* Content Section */}
       <div className="p-4">
         {/* Type and Capacity */}
-        <div className="mb-2 text-xs text-neutral-500">
+        <div className="pt-2 mb-2 text-xs text-neutral-500">
           {type} · {capacity} capacity
         </div>
 
@@ -79,26 +79,26 @@ const StayCard = ({ space = {} }) => {
 
         {/* Address */}
         <div className="flex items-center mt-2 text-sm text-neutral-500">
-          <Icon icon="bx:map" className="mr-1" width="16" />
-          <span>{formattedAddress}</span>
+          <Icon icon="bx:map" className="mr-2" width="20" />
+          <span className="text-xs">{formattedAddress}</span>
         </div>
 
         {/* Timings */}
-        <div className="flex items-center mt-1 text-sm text-neutral-500">
-          <Icon icon="iconamoon:clock" className="mr-1" width="16" />
-          <span>
+        <div className="flex items-center mt-2 text-sm text-neutral-500">
+          <Icon icon="iconamoon:clock" className="mr-2" width="20" />
+          <span className="text-xs">
             {openTime} - {closeTime}
           </span>
         </div>
 
         {/* Divider */}
-        <div className="my-3 border-b"></div>
+        <div className="my-3 border-b w-[30%]"></div>
 
         {/* Pricing and Action */}
         <div className="flex items-center justify-between">
-          <div className="text-sm font-bold text-[#4A25E1]">
+          <div className="text-sm font-bold text-black">
             {formatCurrency(priceInfo.price, priceInfo.currency)}
-            <span className="text-xs font-normal ">
+            <span className="text-xs ">
               / {priceInfo.duration.toLowerCase()}
             </span>
           </div>
@@ -106,11 +106,12 @@ const StayCard = ({ space = {} }) => {
             href={href(type, slug)} // Call href function with `type` and `slug`
             target="_blank" // Opens in a new tab
             rel="noopener noreferrer" // Security best practice
-            className="text-white py-2 px-2 shadow-xl rounded-2xl bg-gradient-to-r from-[#4A25E1] to-[#7B5AFF]
+            className="text-[#4A25E1]  
   text-sm font-bold flex items-center gap-1"
           >
-            Book Now
-            {/* <Icon icon="bi:arrow-right" width="16" /> */}
+           <span className="underline">Book Now
+            </span> 
+            <Icon icon="bi:arrow-right" width="16" />
           </a>
         </div>
       </div>
