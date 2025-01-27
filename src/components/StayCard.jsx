@@ -56,7 +56,7 @@ const StayCard = ({ space = {} }) => {
     }).format(price);
 
   return (
-    <div className="relative  shrink-0 bg-white rounded-lg shadow-sm group w-[240px]  hover:shadow-md cursor-pointer ">
+    <div className="relative  shrink-0 bg-white rounded-lg shadow-sm group w-[250px]  hover:shadow-md cursor-pointer ">
       {/* Image Section */}
       <div className="relative ">
         <ImageSlider images={images} />
@@ -109,8 +109,7 @@ const StayCard = ({ space = {} }) => {
             className="text-[#4A25E1]  
   text-sm font-bold flex items-center gap-1"
           >
-           <span className="underline">Book Now
-            </span> 
+            <span className="underline">Book Now</span>
             <Icon icon="bi:arrow-right" width="16" />
           </a>
         </div>
