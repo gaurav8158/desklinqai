@@ -56,7 +56,7 @@ const StayCard = ({ space = {} }) => {
     }).format(price);
 
   return (
-    <div className="relative  shrink-0 bg-white rounded-lg shadow-sm group w-[250px]  hover:shadow-md cursor-pointer ">
+    <div className="relative  shrink-0 bg-white rounded-lg shadow-sm group w-[250px]  hover:shadow-md cursor-pointer my-4">
       {/* Image Section */}
       <div className="relative ">
         <ImageSlider images={images} />

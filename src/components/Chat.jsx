@@ -39,7 +39,11 @@ const Chat = ({ input, setInput, messages, setMessages }) => {
       ]);
 
       const sessionId = sessionStorage.getItem("sessionId");
-
+      if (sessionId) {
+        const url = new URL(window.location.href);
+        url.searchParams.set("sessionId", sessionId);
+        window.history.replaceState(null, "", url.toString());
+      }
       const response = await fetch(
         "https://assistant-api.desklinq.com/process-message",
         {
