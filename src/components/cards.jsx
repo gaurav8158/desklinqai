@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import icon1 from "../assets/exploreicon/HotDesks.png";
 import icon2 from "../assets/exploreicon/MeetingRooms.png";
 import icon3 from "../assets/exploreicon/PrivateOffice.png";
-import icon4 from "../assets/icon4.png";
+import icon4 from "../assets/exploreicon/Search.png";
 
 const initialCards = [
   { id: 1, title: "I am looking for a Hot Desk", icon: icon1, active: true },
@@ -37,19 +37,19 @@ const CardGrid = ({ input, setInput }) => {
             onClick={() => handleCardClick(card.id, card.title)}
           >
             <div
-              className={`flex-shrink-0 w-36 h-36 sm:w-40 sm:h-40  lg:w-52 lg:h-52  flex items-center justify-center  overflow-hidden  bg-[#ffffff] text-black p-4 rounded-3xl shadow-md cursor-pointer transition-transform hover:bg-gray-100  flex-col  ${
+              className={`flex-shrink-0 w-36 h-36 sm:w-40 sm:h-40  lg:w-48 lg:h-48  flex items-center justify-center  overflow-hidden  bg-[#ffffff] text-black rounded-3xl shadow-md cursor-pointer transition-transform hover:bg-gray-100  flex-col  ${
                 card.active
-                  ? "border-2 border-[#6C4AF6] scale-105 bg-gray-100"
+                  ? "border-[1px] border-[#6C4AF6] scale-105 bg-gray-100"
                   : "bg-[#F9F9FA]"
               }`}
             >
               <img
                 src={card.icon}
                 alt={card.title}
-                className={` ${
+                className={`${
                   card.icon === icon4
-                    ? "w-16 h-16"
-                    : "object-cover  w-full h-full"
+                    ? "w-32 h-32"
+                    : "object-cover w-full h-full"
                 }}`}
               />
             </div>
